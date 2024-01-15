@@ -27,5 +27,19 @@ async function fetchImg(query) {
 function createImage(src) {
   const img = document.createElement("img");
   img.src = src;
+  img.onclick = () => downloadImage(src);
   imgDiv.insertBefore(img, imgDiv.firstChild);
+}
+
+async function downloadImage(imageSrc) {
+  const image = await fetch(imageSrc);
+  const imageBlog = await image.blob();
+  const imageURL = URL.createObjectURL(imageBlog);
+
+  const link = document.createElement("a");
+  link.href = imageURL;
+  link.download = "";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
