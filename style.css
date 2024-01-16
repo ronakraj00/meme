@@ -54,6 +54,7 @@ footer {
 form {
     backdrop-filter: blur(30px);
     position: fixed;
+    z-index: 10;
     padding: 20px;
     width: 100%;
     display: flex;
