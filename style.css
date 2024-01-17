@@ -94,7 +94,6 @@ form {
     position: absolute;
     z-index: 20;
     backdrop-filter: blur(30px);
-    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.272);
     height: 100dvh;
     width: 100vw;
 }
@@ -106,9 +105,11 @@ form {
     margin-inline: auto;
     padding: 14px 20px;
     border-radius: 10px;
+    margin-top: 200px;
     opacity: 0;
     transition:opacity ease-in-out 0.2s;
-    transform: translateY(200px);
+    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.272);
+
 }
 
 .fade-in{
