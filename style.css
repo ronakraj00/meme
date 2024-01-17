@@ -35,9 +35,10 @@ footer {
     display: flex;
     flex-wrap: wrap;
     row-gap: 10px;
-    column-gap: 5px;
+    column-gap: 15px;
     justify-content: center;
     scroll-behavior: smooth;
+    transition: all 1s;
 
     & img {
         max-width: 95%;
@@ -98,14 +99,20 @@ form {
     width: 100vw;
 }
 
-.confirm-popup > div{
+.popup{
     background-color: rgba(255, 255, 255, 0.779);
     border: 2px solid white;
     width: max-content;
-    margin-top: 100px;
     margin-inline: auto;
     padding: 14px 20px;
     border-radius: 10px;
+    opacity: 0;
+    transition:opacity ease-in-out 0.2s;
+    transform: translateY(200px);
+}
+
+.fade-in{
+    opacity: 1;
 }
 
 .confirm-popup .btn-wrapper {
