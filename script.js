@@ -39,29 +39,30 @@ function confirm(src) {
     const downloadBtn = document.querySelector(".downloadbtn");
 
     setTimeout(() => {
-      popUpDiv.classList.add("fade-in");
-  }, 100);
-    popUp.addEventListener("click",hidePop);
-    downloadBtn.disabled=false;
-    cancelBtn.addEventListener("click",hidePop);
-    downloadBtn.addEventListener(
-        "click",
-        () => {
-          downloadBtn.disabled=true;
-            downloadImage(src);
-            hidePop();
-        },
-        { once: true }
-    );
+        popUpDiv.classList.add("fade-in");
+    }, 100);
+    popUp.addEventListener("click", hidePop);
+    downloadBtn.disabled = false;
+    cancelBtn.addEventListener("click", hidePop);
+    downloadBtn.addEventListener("click",downloadBtnClicked, { once: true });
+}
+
+function downloadBtnClicked() {
+    downloadBtn.disabled = true;
+    downloadImage(src);
+    hidePop();
 }
 
 function hidePop() {
-  setTimeout(() => {
-    const popUp = document.querySelector(".confirm-popup");
-    popUp.classList.add("hide-popup");
-    const popUpDiv = document.querySelector(".popup");
-    popUpDiv.classList.remove("fade-in");
-}, 100);
+    setTimeout(() => {
+        const popUp = document.querySelector(".confirm-popup");
+        popUp.classList.add("hide-popup");
+        const popUpDiv = document.querySelector(".popup");
+        popUpDiv.classList.remove("fade-in");
+    }, 100);
+    const downloadBtn = document.querySelector(".downloadbtn");
+    downloadBtn.removeEventListener("click",downloadBtnClicked, { once: true });
+
 }
 
 async function downloadImage(imageSrc) {
