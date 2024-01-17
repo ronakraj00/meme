@@ -27,15 +27,28 @@ async function fetchImg(query) {
 function createImage(src) {
   const img = document.createElement("img");
   img.src = src;
-  img.onclick = () => downloadImage(src);
+  img.onclick = () => confirm(src);
   imgDiv.insertBefore(img, imgDiv.firstChild);
+}
+
+function confirm(src){
+  const popUp=document.querySelector(".confirm-popup");
+  popUp.classList.remove("hide-popup");
+  const cancelBtn=document.querySelector(".cancelbtn")
+  const downloadBtn=document.querySelector(".downloadbtn")
+  cancelBtn.addEventListener("click",()=>{
+    popUp.classList.add("hide-popup");
+  })
+  downloadBtn.addEventListener("click",()=>{
+    downloadImage(src);
+    popUp.classList.add("hide-popup");
+  },{once:true});
 }
 
 async function downloadImage(imageSrc) {
   const image = await fetch(imageSrc);
   const imageBlog = await image.blob();
   const imageURL = URL.createObjectURL(imageBlog);
-
   const link = document.createElement("a");
   link.href = imageURL;
   link.download = "";

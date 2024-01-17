@@ -6,6 +6,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 
 #error {
@@ -50,7 +51,6 @@ footer {
     }
 }
 
-
 form {
     backdrop-filter: blur(30px);
     position: fixed;
@@ -84,4 +84,55 @@ form {
         font-size: 1.2rem;
         cursor: pointer;
     }
+}
+
+.confirm-popup {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    position: absolute;
+    z-index: 20;
+    backdrop-filter: blur(30px);
+   
+    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.272);
+    height: 100dvh;
+    width: 100vw;
+}
+
+.confirm-popup > div{
+    border: 2px solid white;
+    width: max-content;
+    margin-top: 100px;
+    margin-inline: auto;
+    padding: 14px 20px;
+    border-radius: 10px;
+}
+
+.confirm-popup .btn-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.confirm-popup button {
+    padding: 8px;
+    font-size: large;
+    background-color: blueviolet;
+    color: white;
+    border:none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.confirm-popup button.cancelbtn {
+    color: blueviolet;
+    background-color:transparent;
+    border: none;
+}
+
+.hide-popup{
+    display: none;
 }

@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giphy Gif</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-    <link rel="icon" href="giphy-gif-logo.png">
-  </head>
-  <body>
-    <form onsubmit="event.preventDefault()">
-      <input type="search" placeholder="Search for gif"/>
-      <button>Search</button>
-    </form>
-    <div id="images">
-      
-    </div>
-    <p id="error"></p>
-    <footer>Made By RonakRaj</footer>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Giphy Gif</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+        <link rel="icon" href="giphy-gif-logo.png" />
+    </head>
+    <body>
+        <div class="confirm-popup hide-popup">
+            <div>
+                <p>Do You want to Download GIF.</p>
+                <div class="btn-wrapper">
+                    <button class="cancelbtn">Cancel</button
+                    ><button class="downloadbtn">Download</button>
+                </div>
+            </div>
+        </div>
+        <form onsubmit="event.preventDefault()">
+            <input type="search" placeholder="Search for gif" />
+            <button>Search</button>
+        </form>
+        <div id="images"></div>
+        <p id="error"></p>
+        <footer>Made By RonakRaj</footer>
+    </body>
 </html>
