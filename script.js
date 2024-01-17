@@ -36,6 +36,12 @@ function confirm(src){
   popUp.classList.remove("hide-popup");
   const cancelBtn=document.querySelector(".cancelbtn")
   const downloadBtn=document.querySelector(".downloadbtn")
+
+  popUp.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    popUp.classList.add("hide-popup");
+  })
+
   cancelBtn.addEventListener("click",()=>{
     popUp.classList.add("hide-popup");
   })
