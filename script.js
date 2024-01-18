@@ -48,6 +48,7 @@ function confirm(src) {
 }
 
 function downloadBtnClicked() {
+    const downloadBtn = document.querySelector(".downloadbtn");
     downloadBtn.disabled = true;
     downloadImage(src);
     hidePop();
