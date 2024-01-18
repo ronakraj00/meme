@@ -44,10 +44,10 @@ function confirm(src) {
     popUp.addEventListener("click", hidePop);
     downloadBtn.disabled = false;
     cancelBtn.addEventListener("click", hidePop);
-    downloadBtn.addEventListener("click",downloadBtnClicked, { once: true });
+    downloadBtn.addEventListener("click",()=>downloadBtnClicked(src), { once: true });
 }
 
-function downloadBtnClicked() {
+function downloadBtnClicked(src) {
     const downloadBtn = document.querySelector(".downloadbtn");
     downloadBtn.disabled = true;
     downloadImage(src);
