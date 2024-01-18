@@ -91,11 +91,17 @@ form {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     font-weight: 600;
-    position: absolute;
+    position: fixed;
     z-index: 20;
     backdrop-filter: blur(30px);
-    height: 100dvh;
+    inset: 0;
+    bottom: 0;
     width: 100vw;
+}
+
+.disable-scroll{
+    height: 100dvh;
+    overflow: hidden;
 }
 
 .popup{
