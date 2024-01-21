@@ -45,9 +45,7 @@ function confirm(src) {
     popUp.addEventListener("click", hidePop);
     downloadBtn.disabled = false;
     cancelBtn.addEventListener("click", hidePop);
-    downloadBtn.addEventListener("click", () => downloadBtnClicked(src), {
-        once: true,
-    });
+    downloadBtn.onclick = () => downloadBtnClicked(src);
 }
 
 function downloadBtnClicked(src) {
@@ -64,10 +62,6 @@ function hidePop() {
         const popUpDiv = document.querySelector(".popup");
         popUpDiv.classList.remove("fade-in");
     }, 100);
-    const downloadBtn = document.querySelector(".downloadbtn");
-    downloadBtn.removeEventListener("click", () => downloadBtnClicked(src), {
-        once: true,
-    });
     document.querySelector("body").classList.remove("disable-scroll");
 }
 
